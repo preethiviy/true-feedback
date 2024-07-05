@@ -56,7 +56,16 @@ export async function GET(request: NextRequest){
             }
         )
     } catch (error) {
-        
+        console.log("An unexpected error occured", error);
+        return NextResponse.json(
+            {
+                success: false,
+                message: "An unexpected error occured"
+            },
+            {
+                status: 500
+            }
+        )
     }
 
 }
